@@ -22,6 +22,10 @@ class HpeuraVacuumAgent(VacuumAgent):
             self.log(dir, 'None', 'Straight')
             return dir
         
+        elif self.step % 10 == 0:
+            dir = random.choice(['Left', 'Right', 'Up', 'Down'])
+            self.log(dir, percept[1], 'Random')
+            return dir
         
         elif percept[1] == 'Bump':
             
